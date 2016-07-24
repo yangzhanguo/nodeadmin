@@ -1,0 +1,55 @@
+html, body {
+    height: 100%;
+}
+
+#navbar {
+    height: 45px;
+    background: #438eb9
+}
+
+#solidbar {
+    width: 189px;
+    border-right: 1px solid #ccc;
+    height: 100%;
+    float: left;
+}
+
+.navlist li {
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #ccc;
+}
+
+.navlist li a {
+    display: block;
+    height: 100%;
+    padding: 0 16px 0 7px;
+    font-family: "微软雅黑";
+    color: #585858
+}
+
+.navlist li a:hover {
+    color: #2b7dbc;
+    border-left: 3px solid #2b7dbc;
+}
+
+.navlist .active a {
+    font-weight: bold;
+    color: #2b7dbc;
+    border-left: 3px solid #2b7dbc;
+}
+
+.navlist li a i {
+    display: inline-block;
+    width: 30px;
+}
+
+#mian {
+    margin-left: 190px;
+    height: 100%;
+}
+
+#mian iframe {
+    display: block;
+    height: 100%;
+}
