@@ -5,7 +5,7 @@ var express = require('express');
 var router = express.Router();
 
 
-/* GET home page. */
+
 
 module.exports = function (app) {
     app.get('/', function (req, res, next) {
@@ -22,9 +22,15 @@ module.exports = function (app) {
 
     app.get('/category', function (req, res, next) {
         res.render('category', {
-            title: '分类管理'
+            title: '分类列表'
         });
     });
+
+    app.get('/addcategory', function (req, res, next) {
+        res.render('addcategory', {
+            title: '增加分类'
+        });
+    })
 
 
 }
