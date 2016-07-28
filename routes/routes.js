@@ -1,13 +1,25 @@
 /**
  * Created by yzg on 2016/7/24.
  */
-var express = require('express');
-var router = express.Router();
+
+
+
+
+
+var index              = require("../controllers/index");
+var home               = require("../controllers/home");
+
 
 
 
 
 module.exports = function (app) {
+
+    app.get("/", index.index);
+    app.get("/home", home.home);
+
+
+    /*
     app.get('/', function (req, res, next) {
         res.render('index', {
             title: '首页'
@@ -32,7 +44,7 @@ module.exports = function (app) {
         });
     })
 
-
+*/
 }
 
 
