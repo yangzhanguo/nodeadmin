@@ -6,8 +6,10 @@
 
 
 
-var index              = require("../controllers/index");
-var home               = require("../controllers/home");
+var index              = require("../controllers/admin/index");
+var home               = require("../controllers/admin/home");
+var category           = require("../controllers/admin/category");
+var login              = require("../controllers/admin/login")
 
 
 
@@ -17,7 +19,10 @@ module.exports = function (app) {
 
     app.get("/", index.index);
     app.get("/home", home.home);
-
+    app.get("/category", category.category );
+    app.get("/addcategory", category.addcategory );
+    app.get("/login", login.login );
+    app.post("/login", login.postlongin );
 
     /*
     app.get('/', function (req, res, next) {

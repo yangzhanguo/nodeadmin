@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= title %></title>
+</head>
+<body>
+<div id="regbox">
+  <form method="post">
+    <% if (success) { %>
+    <div class="alert alert-success" role="alert"><%= success %></div>
+    <% } %>
+    <% if (error) { %>
+    <div class="alert alert-danger" role="alert"><%= error %></div>
+    <% } %>
+    <div class="pb20">
+      <input type="text" autocomplete="off" name="username" class="form-control"  placeholder="用户名">
+    </div>
+    <div class="pb20">
+      <input autocomplete="off" name="userpw" type="password"  maxlength="20"  class="form-control" placeholder="密码">
+    </div>
+    <input id="regloginbtn"  class="btn btn-primary" type="submit" value="登录" />
+    <p class="toregorlogin"><a href="/reg">还没有账号？现在注册</a></p>
+  </form>
+</div>
+</body>
+</html>
