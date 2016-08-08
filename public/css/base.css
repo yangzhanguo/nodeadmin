@@ -18,3 +18,9 @@ li {
 a {
     text-decoration: none
 }
+.innner_box{ padding: 15px; padding-bottom: 0;}
+.alingright {text-align: right; padding-bottom: 15px;}
+
+.alert { position: absolute; padding:10px 20px; left: 50%; top:0;}
+.Validform_right{ display: none}
+.Validform_wrong{ color: red; line-height: 24px;}

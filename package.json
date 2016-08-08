@@ -8,7 +8,6 @@
   "dependencies": {
     "body-parser": "~1.13.2",
     "bson": "~0.4.20",
-
     "connect-flash": "~0.1.1",
     "connect-mongo": "~0.4.2",
     "connect-multiparty": "^2.0.0",

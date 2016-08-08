@@ -18,9 +18,11 @@ var login              = require("../controllers/admin/login")
 module.exports = function (app) {
 
     app.get("/", index.index);
+    app.get("/logout", index.indexlogout)
     app.get("/home", home.home);
-    app.get("/category", category.category );
-    app.get("/addcategory", category.addcategory );
+    app.get("/category", category.categorylist );
+    app.get("/addcategory", category.addcategorypage );
+    app.post("/addcategory", category.addcategory )
     app.get("/login", login.login );
     app.post("/login", login.postlongin );
 

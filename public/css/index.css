@@ -52,4 +52,5 @@ html, body {
 #mian iframe {
     display: block;
     height: 100%;
+    width: 100%;
 }

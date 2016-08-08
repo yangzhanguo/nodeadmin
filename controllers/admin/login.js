@@ -1,11 +1,11 @@
 /**
  * Created by Administrator on 2016/8/5.
  */
-var express = require('express');
-var router = express.Router();
-var fs = require('fs');
+
 var mongoose = require('mongoose');    //引用mongoose模块
 var db = mongoose.createConnection('localhost','newbloguser'); //创建一个数据库连接
+
+
 var crypto = require('crypto');
 
 
@@ -24,9 +24,6 @@ exports.login = function (req, res) {
         success: req.flash('success').toString(),
         error: req.flash('error').toString()
     });
-
-
-
 }
 
 
@@ -36,14 +33,14 @@ exports.postlongin = function (req, res) {
         if(err)
         {
             req.flash('error', '错误');
-            return res.redirect('admin/login');
+            return res.redirect('login');
         }
         if(user!=null){
             var md5 = crypto.createHash('md5'),
                 userpw = md5.update(req.body.userpw).digest('hex');
             if(userpw!=user.userpw){
                 req.flash('error', '密码错误');
-                return res.redirect('admin/login');
+                return res.redirect('login');
             }
             else{
                 req.session.user = user; //用户信息存入session
@@ -53,7 +50,7 @@ exports.postlongin = function (req, res) {
         }
         else{
             req.flash('error', '用户不存在');
-            return res.redirect('admin/login');
+            return res.redirect('login');
         }
     });
 
