@@ -22,29 +22,60 @@
     <table class="table table-bordered">
         <thead>
         <tr>
-            <th><input type="checkbox"></th>
+
             <th>名称</th>
             <th>别名</th>
             <th>父级</th>
             <th width="65%">描述</th>
-            <th>文章数</th>
+
             <th>操作</th>
         </tr>
         </thead>
         <tbody>
         <% category.forEach(function (category, index) { %>
             <tr>
-                <td><input type="checkbox"></td>
+
                 <td><%= category.name %></td>
                 <td><%= category.alias %></td>
-                <td><%= category.parent %></td>
+                <td><% if(category.parent == "-1"){ %>无<% } else{ %><%= category.parent %><% } %></td>
                 <td><%= category.describe %></td>
-                <td></td>
+
                 <td><a href="#">编辑</a> </td>
             </tr>
+            <% category.childlist.forEach(function (categorylist, index2) { %>
+            <tr>
+
+                <td><%= categorylist.name %></td>
+                <td><%= categorylist.alias %></td>
+                <td><%= category.name %></td>
+                <td><%= categorylist.describe %></td>
+
+                <td><a href="#">编辑</a> </td>
+            </tr>
+            <% }) %>
         <% }) %>
         </tbody>
     </table>
+    <nav style="text-align: right">
+        <ul class="pagination" style="margin-top: 0">
+            <li>
+                <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li>
+                <a href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
 </div>
 
 <script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>

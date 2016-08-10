@@ -9,7 +9,8 @@
 var index              = require("../controllers/admin/index");
 var home               = require("../controllers/admin/home");
 var category           = require("../controllers/admin/category");
-var login              = require("../controllers/admin/login")
+var login              = require("../controllers/admin/login");
+var acticle            = require("../controllers/admin/article")
 
 
 
@@ -22,7 +23,12 @@ module.exports = function (app) {
     app.get("/home", home.home);
     app.get("/category", category.categorylist );
     app.get("/addcategory", category.addcategorypage );
-    app.post("/addcategory", category.addcategory )
+    app.post("/addcategory", category.addcategory );
+    app.get("/article", acticle.artoclelist);
+
+
+
+
     app.get("/login", login.login );
     app.post("/login", login.postlongin );
 

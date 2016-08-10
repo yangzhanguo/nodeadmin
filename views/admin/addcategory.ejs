@@ -32,8 +32,11 @@
     </div>
     <div class="form-group">
         <label class="control-label">父级</label>
-        <select name="parent" class="form-control">>
+        <select name="parent" class="form-control">
             <option value="-1">无</option>
+            <% category.forEach(function (category, index) { %>
+            <option value="<%= category._id %>"><%= category.name %></option>
+            <% }) %>
         </select>
     </div>
     <div class="form-group">
